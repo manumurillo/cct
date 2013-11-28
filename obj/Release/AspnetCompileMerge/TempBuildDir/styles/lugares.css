@@ -1,0 +1,171 @@
+﻿.place {
+    margin: 0px;
+}
+
+.section-title {
+    width: 980px;
+    height:55px;
+    float:left;
+    opacity:0.75;
+    filter:alpha(opacity=75);
+    background-color:#fff;
+    z-index:22;
+}
+
+.section-title > p{
+    color: #4f292b;
+    font-size: 11pt;
+    margin: 15px 20px;
+}
+
+.section-title > p > strong{
+    color: #4f292b;
+    font-size: 12pt;
+    font-weight:bold;
+}
+
+/*Áreas sobre habitación*/
+#img_habitacion {
+    float: left;
+    position:relative;
+    background-image:url("../images/home/habitacion.jpg");
+    width: 980px;
+    height: 444px;
+}
+/*Fin habitación*/
+
+/*Áreas sobre estancia*/
+#img_estancia {
+    float: left;
+    position:relative;
+    background-image:url("../images/home/estancia.jpg");
+    width: 980px;
+    height: 444px;
+}
+/*Fin estancia*/
+
+/*Áreas sobre estudio*/
+#img_estudio {
+    float: left;
+    position:relative;
+    background-image:url("../images/home/estudio.jpg");
+    width: 980px;
+    height: 444px;
+}
+/*Fin estudio*/
+
+/*Áreas sobre cocina*/
+#img_cocina {
+    float: left;
+    position:relative;
+    background-image:url("../images/home/cocina.jpg");
+    width: 980px;
+    height: 444px;
+}
+/*Fin cocina*/
+
+/*Áreas sobre baño*/
+#img_bano {
+    float: left;
+    position:relative;
+    background-image:url("../images/home/bano.jpg");
+    width: 980px;
+    height: 444px;
+}
+/*Fin bano*/
+
+/*Áreas sobre jardin*/
+#img_jardin {
+    float: left;
+    position:relative;
+    background-image:url("../images/home/jardin.jpg");
+    width: 980px;
+    height: 444px;
+}
+/*Fin jardin*/
+
+
+.tip {
+    background-image: url("../images/bullets/contracted_bullet.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 21px;
+    height: 20px;
+}
+
+/*PRINCIPIO DE MENU A LA DERECHA*/
+.menu-derecha{
+	float: right;
+	width: 35px;
+	height: 444px;
+    position:absolute;
+	overflow: hidden;
+    z-index:100;
+    left:945px;
+}
+.contenedor{
+	width: 310px;
+	height: 444px;
+    z-index:100;
+    opacity:0.95;
+    filter:alpha(opacity=95);
+    background-color:#fff;
+    margin:0px;
+}
+.contenedor-izquierda{
+	width: 35px;
+	height: 444px;
+	float: left;
+	background-image: url("../images/menu_elements/pleca.jpg");
+    background-repeat: no-repeat;
+    z-index:105;
+}
+.esconder{
+	display: none;
+}
+.contenedor-izquierda-desactivado{
+	float: left;
+	cursor: pointer;
+    z-index:101;
+    margin-left:5px;
+    margin-top:5px;
+}
+.contenedor-izquierda-activado{
+	float: left;
+	opacity:0.95;
+	cursor: pointer;
+    z-index:101;
+    margin-left:5px;
+    margin-top:5px;
+}
+.contenedor-submenu{
+	width: 275px;
+	float: left;
+    z-index:99;
+    font-size: 12px;
+}
+
+.desactivada {
+    background-image: url("../images/menu_elements/flecha.png");
+    background-repeat: no-repeat;
+    width: 24px;
+    height: 24px;
+    background-color:transparent;
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+}
+
+.activada {
+    background-image: url("../images/menu_elements/flecha.png");
+    background-repeat: no-repeat;
+    width: 24px;
+    height: 24px;
+    background-color:transparent;
+    -moz-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg);
+}
+/*FIN DE MENU A LA DERECHA*/

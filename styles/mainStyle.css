@@ -1,0 +1,1000 @@
+﻿body 
+{
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    margin: 0px;
+    background-color: #fff;
+}
+
+#container
+{
+    margin: 0px auto;
+    width: 980px;
+    background-color: #ffffff;
+}
+
+#header
+{
+    background-image: url("../images/header_back_logo_menu.jpg");
+    background-repeat: no-repeat;
+    width: 980px;
+    height: 82px;
+    position: relative;
+}
+
+.rows {
+    float:left;
+    width:980px;
+    height: 7px;
+    border: 0;
+    position:relative;
+    z-index: 0;
+}
+
+
+#row1 {
+    position:absolute;
+    top: 2px;
+    left: 360px;
+    height: 7px;
+    width:14px;
+    background-image: url("../images/menu_elements/buenos_habitos_en_el_hogar_cal-c-tose_flecha.png");
+    background-repeat:no-repeat;
+}
+
+#row2 {
+    position:absolute;
+    top: 2px;
+    left: 570px;
+    height: 7px;
+    width:14px;
+    background-image: url("../images/menu_elements/herramientas_de_mama_flecha.png");
+    background-repeat:no-repeat;
+}
+
+#row3 {
+    position:absolute;
+    top: 2px;
+    left: 715px;
+    height: 7px;
+    width:14px;
+    background-image: url("../images/menu_elements/cal-c-tose_flecha.png");
+    background-repeat:no-repeat;
+}
+
+#row4 {
+    position:absolute;
+    top: 2px;
+    left: 860px;
+    height: 7px;
+    width:14px;
+    background-image: url("../images/menu_elements/comparte_tus_consejos_flecha.png");
+    background-repeat:no-repeat;
+}
+
+#logo {
+    position: absolute;
+    left: 16px;
+    top: 13px;
+    width: 74px;
+    height: 54px;
+    cursor: pointer;
+    display: block;
+}
+
+
+.session
+{
+    width: 157px;
+    height: 16px;
+    margin: 20px 10px 10px 10px;
+    float: right;
+    background:#ffffff;
+    border:1px solid #adc31d;
+    font-weight: bold;
+    text-align:center;
+    padding-top:4px;
+    font-size:11px;
+    color: #adc31d;
+}
+
+.session_usr
+{
+    width: 157px;
+    height: 16px;
+    margin: 20px 10px 10px 10px;
+    float: right;
+    font-weight: bold;
+    text-align:right;
+    padding-top:4px;
+    font-size:12px;
+    color: #4D2A2B;
+}
+
+a.light:link {
+    text-decoration:none;
+    font-size:11px;
+    color: #adc31d;
+}
+
+a.light:visited {
+    text-decoration:none;
+    font-size:11px;
+    color: #adc31d;
+}
+
+a.light:hover {
+    text-decoration:underline;
+    font-size:11px;
+    color: #adc31d;
+}
+
+a.light:active {
+    text-decoration:none;
+    font-size:11px;
+    color: #adc31d;
+}
+
+#pleca
+{
+    background-image: url("../images/pleca_madera_navegacion.jpg");
+    width: 980px;
+    height: 10px; 
+    margin:0;
+}
+
+#content {
+    margin: 0px;
+    float:left;
+    clear:both;
+    background-color: #fff;
+}
+
+#footer {
+    background-image: url("../images/footer_legales_mead_johnson.jpg");
+    background-repeat: no-repeat;
+    width: 980px;
+    height: 45px;
+    float:left;
+    z-index:0;
+}
+
+#text-footer {
+    padding: 5px 10px;
+    float:left;
+    width: 600px;
+    height:20px;
+}
+
+#mj-logo {
+    float:right;
+    width: 117px;
+    height: 40px;
+    cursor:pointer;
+    margin-right:10px;
+    margin-top:5px;
+}
+/* MENU*/
+
+/*Menu*/
+#menu
+{
+    position:relative;
+    float: right;
+    clear:both;
+    margin: 0;
+    width: 900px;
+    z-index: 2;
+}
+
+.items{
+	width: 720px;
+    height: 15px;
+    position:relative;
+    float:right;
+    margin: 3px 10px 3px 10px;
+    font-size: 12px;
+    font-weight:bold;
+    
+}
+#cssmenu ul {
+  margin: 0;
+  padding: 0;
+  z-index:99;
+}
+
+#cssmenu ul .selected{
+  color:#adc31d;
+}
+
+#cssmenu li {
+  margin: 0;
+  padding: 0;
+}
+#cssmenu a {
+  margin: 0;
+  padding: 0;
+  padding-left: 15px;
+  padding-right: 10px;
+}
+#cssmenu ul {
+  list-style: none;
+}
+#cssmenu a {
+  text-decoration: none;
+}
+#cssmenu > ul > li > ul {
+  opacity: 0;
+  border: solid 1px #adc31d;
+  font-size:9pt;
+  visibility: hidden;
+  padding: 10px 0 10px 0;
+  background-color: #fafafa;
+  text-align: left;
+  position: absolute;
+  top: 0px;
+  left: 50%;
+  margin-left: -90px;
+  width: 200px;
+}
+
+#cssmenu > ul > li:hover{
+  color:#adc31d;
+
+}
+
+#cssmenu > ul > li > ul> li{
+  line-height: 25px;
+  font-size: 12px;
+
+}
+
+#cssmenu > ul > li:hover > ul {
+  opacity: .9;
+  top: 37px;
+  visibility: visible;
+}
+
+#item0{
+	position: absolute;
+	left:0px;
+	top:0px;
+    height:15px;
+	border-right: 1px solid #4f292b;
+}
+
+#item1{
+	position: absolute;
+	left:5px;
+	top:0px;
+    height:45px;
+    padding-left: 15px;
+}
+
+#item2{
+	position: absolute;
+	left: 240px;
+	top:0px;
+	border-left: 1px solid #4f292b;
+    border-right: 1px solid #4f292b; 
+}
+
+#item3{
+	position: absolute;
+	left: 420px;
+	top:0px;
+    height:45px;
+}
+
+#item4{
+	position: absolute;
+	left: 525px;
+	top:0px;
+	border-left: 1px solid #4f292b;
+}
+/*Fin menú desplegable*/
+
+.area_map {
+    cursor:pointer;
+}
+#col1-3 
+{
+    float: left;
+    width: 305px;
+    clear:none;
+    background-color: #ffffff;
+    padding-left:10px;
+    padding-right: 10px;
+    text-align:center;
+}
+
+#col2-3 
+{
+    float: left;
+    width: 320px;
+    clear:none;
+    border-left: dotted 1px #4f292b;
+    border-right: dotted 1px #4f292b;
+    text-align:center;
+    background-color: #ffffff;
+    height: 480px;
+}
+
+#col3-3 
+{
+    float: left;
+    width: 305px;
+    clear:none;
+    background-color: #ffffff;
+    padding-left:10px;
+    padding-right: 10px;
+    text-align:center;
+}
+
+.title
+{
+    font-size: 14pt;
+    font-weight: bold;
+    color: #4f292b;
+    display: block;
+    margin: 15px auto 5px auto;
+}
+
+.subtitle 
+{
+    font-size: 10pt;
+    color: #4f292b;
+    display: block;
+    margin: 5px;
+}
+
+.space-5 {
+    width:100%;
+    clear: both;
+    height: 5px;
+}
+
+.space-10 {
+    width:100%;
+    clear: both;
+    height: 10px;
+}
+
+.button {
+    color: #adc31d;
+    font-size: 8pt;
+    font-weight: bold;
+    background-color: #fff;
+    width: 100%;
+    border: solid 1px #adc31d;
+    margin: 0px auto;
+    padding: 2px 0px;
+    cursor:pointer;
+}
+
+.normal {
+    clear: both;
+    font-size: 9pt;
+    margin: 10px 0px 2px 0px;
+    color: #4f292b;
+}
+
+.text-right {
+    text-align:right;
+}
+
+.text-left {
+    text-align:left;
+}
+
+
+a.dark:link {
+    text-decoration: none;
+    color: #4f292b;
+    font-weight: bold;
+}
+
+a.dark:visited {
+    text-decoration: none;
+    color: #4f292b;
+    font-weight: bold;
+}
+
+a.dark:hover {
+    text-decoration: none;
+    color: #4f292b;
+    font-weight: bold;
+}
+
+a.dark:active {
+    text-decoration: none;
+    color: #4f292b;
+    font-weight: bold;
+}
+
+.strong {
+    font-size: 11pt;
+    margin: 0px;
+}
+
+.img {
+    border:none;
+}
+
+.errorMsg {
+    font-size:8pt;
+    color: #e92d02;
+}
+
+.result {
+    font-size:9pt;
+    color: #e92d02;
+}
+
+.center {
+    text-align:center;
+}
+
+
+a.mix:link {
+    text-decoration: none;
+    color: #4f292b;
+    font-weight: bold;
+}
+
+a.mix:visited {
+    text-decoration: none;
+    color: #4f292b;
+    font-weight: bold;
+}
+
+a.mix:hover {
+    text-decoration: none;
+    color: #adc31d;
+    font-weight: bold;
+}
+
+a.mix:active {
+    text-decoration: none;
+    color: #4f292b;
+    font-weight: bold;
+}
+
+.ui-tooltip {
+    border: 1px solid #adc31d;
+    color: #4f292b;
+}
+
+/*Páginas estáticas*/
+
+
+div#wrapper{
+    background: #ffffff;
+    width: 980px;
+    height: auto;
+    margin: 0 auto;
+}
+div#content1{
+    width:980px;
+    height:468px;
+    margin:0 auto;
+    background: #FFFCF3;
+    border-bottom: 1px solid #4E292B;
+}
+div.top{
+    width: 980px;
+    height: 50px;
+    background: #FFFFFF;
+    border-bottom: 1px solid #4E292B;
+    border-top: 1px solid #4E292B;
+    opacity: 0.8;
+    font-family: helvetical,Arial;
+    z-index: 1;
+}
+div.columnaIzq{
+    width: 200px;
+    height: 30px;
+    float: left;
+    font-size: 12pt;
+    font-weight: bold;
+    text-align: center;
+    color: #4D2A2B;
+    padding: 10px 10px;
+}
+div.columnaDer{
+    width: 730px;
+    height: 40px;
+    float: left;
+    color: #4E292B;
+    font-size: 10pt;
+    padding: 5px 10px;
+    border-left: 1px solid #4E292B;
+}
+
+.note {
+    font-size: 8pt;
+}
+
+div#tabla{
+    width:700px;
+    height:240px;
+    margin:0 auto;
+}
+div#tabla table{
+    width: 700px;
+    border: 0px;
+    text-align: center;
+}
+.celda{
+    color:#4e292b;
+    font-family:Helvetical, Arial;
+    font-size:10pt;
+    font-weight:bold;
+}
+.azul{background:#e2ecf8;}
+.cafe{background:#dacabb;}
+.rosa{background:#f8eae2;}
+div#referencias{
+    width: 700px;
+    margin: 25px auto 0;
+    line-height: 15px;
+}
+.references{
+    color: #4E292B;
+    font-family: Helvetica,Arial;
+    font-size: 10px;
+    font-weight: bold;
+}
+.referencesLi{font-weight: normal;}
+.referencesFoot{font-weight: normal; font-size: 10pt;}
+div#presentaciones{
+    width: 980px;
+    height: 365px;
+    background: url('../images/marca/cct_presentaciones.jpg') 0px -60px ;
+}
+div.volver{
+    width: 910px;
+    height: 50px;
+    float: left;
+    margin: 10px 0 0 50px;
+    font-family: Helvetica;
+    font-style: normal;
+    font-size: 9pt;
+}
+div.volver a img{
+    width: 29px;
+    height: 29px;
+    display: inline;
+    margin: 0 0 -9px 0;
+}
+div#desayuno{
+    background: url('../images/desayuno/cct_ideas_para_desayuno_02.jpg') no-repeat 0px -53px;
+    width: 980px;
+    height: 415px;
+    color: #4E292B;
+    font-family: Arial,Helvetica,sans-serif;
+    font-style: italic;
+}
+div#desayuno p{
+    padding: 0 0 0 20px;
+}
+div#desayunos{
+    margin: 0 0 0 20px;
+    width: 980px;
+    height: 330px;
+    overflow-y: auto;
+}
+div#ciencia .generica{
+    width: 235px;
+    height: 340px;
+    float: left;
+}
+div#ciencia .sabiasQue{
+    width: 730px;
+    height: 340px;
+    float: left;
+    overflow: auto;
+    padding: 0 0 0 15px;
+    color: #663300;
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 12px;
+}
+div#ciencia .sabiasQue p, div#ciencia .sabiasQue a{margin: 0 0 0 15px;}
+div#ciencia .sabiasQue span{ font-weight: bolder; }
+div#ciencia .sabiasQue ul{ margin: 0 0 0 55px; }
+div#ciencia .sabiasQue ul li{ padding: 3px 0 3px; }
+div#ciencia .sabiasQue p.pie{font-size: 10px; font-style: italic;}
+
+div#cal-c-tose{
+    background: url(../images/marca/cal-c-tose_02.jpg) no-repeat 0px -50px;
+    width: 980px;
+    height: 410px;
+}
+div#cal-c-tose div{
+    float: left;
+    margin: 330px 0 0 225px;
+    font-family: Helvetica;
+    font-size: 9pt;
+    line-height: normal;
+}
+div#acerca_de{
+    background: url(../images/marca/cct_acerca_02.jpg) no-repeat 0px -50px;
+    width: 980px;
+    height: 415px;
+} 
+div#acerca_de div.pie{
+    width: 815px;
+    padding: 350px 0 0 65px;
+    color: #4D2B2A;
+    font-family: Helvetica;
+    font-size: 9pt;
+}
+div#top_comparte{
+    
+}
+
+/*Scrollbar*/
+
+::-webkit-scrollbar {
+    width: 12px;
+}
+ 
+    /* Track */
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+}
+ 
+    /* Handle */
+::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    background: rgba(78, 41, 43, 0.73); 
+    -webkit-box-shadow: inset 0 0 6px rgbargba (78, 41, 43, 0.5); 
+}
+
+    /*Inactive*/
+::-webkit-scrollbar-thumb:window-inactive {
+	background: rgba(255,0,0,0.4); 
+}
+
+#tablaNutrimental {
+    width: 636px;
+    height: 686px;
+    display: none;
+    text-align:center;
+}
+
+    #tablaNutrimental > img {
+        border: 4px solid #dacabb;
+    }
+
+.sliderContainer {
+    margin-left:auto;
+    margin-right: auto;
+    width:280px;
+    height:380px;
+    background-color: #fff;
+    margin-top:10px;
+}
+
+.centered {
+    margin-left: auto;
+    margin-right: auto;
+}
+/*Form Styles*/
+
+#login_form{
+    text-align: left;
+    margin-left: 50px;
+    margin-right: 60px;
+    margin-top: 20px;
+    width: 300px;
+}
+
+#form_consejos{
+    text-align: left;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    width: 250px;
+}
+
+#registro_form{
+    text-align: left;
+    float:left;
+    margin-left: 50px;
+    margin-right: 60px;
+    margin: 20px 20px;
+    width: 400px;
+}
+
+.column1, .column2, .column3{
+    float:left;
+    width: 180px;
+    margin:10px 10px
+}
+
+.label {
+    clear: both;
+    font-size: 8pt;
+    margin: 10px 0px 2px 0px;
+    font-weight: bold;
+    color: #4f292b;
+}
+
+.input-text {
+    border: solid 1px #4f292b;
+    width: 100%;
+}
+
+.small {
+    width: 150px;
+}
+
+.gen_form {
+    padding-left:10px;
+    padding-right: 10px;
+    width: 90%;
+}
+/*End form Styles*/
+
+
+
+a.list:link {
+    text-decoration: none;
+    color: #4f292b;
+    font-weight: bold;
+}
+
+a.list:visited {
+    text-decoration: none;
+    color: #4f292b;
+    font-weight: bold;
+}
+
+a.list:hover {
+    text-decoration: none;
+    color: #adc31d;
+    font-weight: bold;
+}
+
+a.list:active {
+    text-decoration: none;
+    color: #4f292b;
+    font-weight: bold;
+}
+
+.bullet {
+    list-style-image: url(../images/bullets/bullet.png);
+    margin-bottom: 5px;
+}
+
+div#top_comparte{
+    width: 950px;
+    height: 140px;
+    float: left;
+    margin: 0 15px 0;
+}
+div#top_comparte p{
+    width: 950px;
+    font-size: 18px;
+    font-weight: bolder;
+    margin: 15px 0 15px;
+}
+div#elige_cat, div#busca_tip{
+    width: 475px;
+    height: 40px;
+    float: left;
+    margin: 11px 0 0;
+    font-weight: bolder;
+}
+div#elige_cat select{ 
+    background: url(../images/menu_elements/drop_down_menu.jpg) no-repeat 2px;
+    width: 130px; 
+    height: 20px;
+    padding: 0 0 0 20px;
+    color: #4D2A2B;
+    font-weight: bolder;
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+}
+div#busca_tip input{
+    background: url(../images/menu_elements/buscar.jpg) no-repeat;
+    width: 180px;
+    height: 20px;
+    color: #4D2A2B;
+    font-weight: bolder;
+    padding: 0 20px 0 0;
+    margin: 0 10px; 0 0;
+}
+div#consejos{ 
+    width: 950px;
+    margin: 0 0 0 15px;
+    float: left;
+}
+div#colIzq{
+    width: 685px;
+    float: left;
+}
+div.consejo{
+    width: 665px;
+    min-height: 120px;
+    float: left;
+    margin: 5px 0 30px 0;
+}
+div.consejo_title{
+    width: 665px;
+    height: 15px;
+    float: left;
+    margin: 5px 0 0 0;
+}
+div.consejo_title span.titulo{
+    float: left;
+    text-transform: uppercase; 
+    font-weight:bold;
+}
+div.consejo_title span.fecha>.categoria{
+    text-transform: uppercase; 
+}
+div.consejo_title span.fecha{
+     text-align:right; 
+     float: right;
+     text-transform:capitalize;
+}
+div.consejo_body{
+    width: 665px;
+    min-height: 100px;
+    float: left;
+    border-top: 1px solid #ADC31D;
+    border-bottom: 1px solid #ADC31D;
+    margin: 0 0 30px 0;
+}
+.consejo_title{
+    color: #4d2b2c;
+}
+div.sec_consejos #compartir .title{
+    font-size: 12px;
+}
+div.sec_consejos #compartir .subtitle{
+   font-size: 12px; 
+}
+.sec_consejos div.consejo_txt{
+    width: 495px;
+    min-height: 100px;
+    float: left;
+    border-right: 1px solid #ADC31D;
+    color: #4d2b2c;
+}
+div.sec_consejos.seccion div.consejo_txt{
+    border-right: none;
+}
+div.sec_consejos.seccion div.consejo .consejo_img{
+    border-bottom: 1px solid #ADC31D;
+    border-left: 1px solid #ADC31D;
+}
+/*div.consejo_txt p{
+    width: 445px;
+    min-height: 55px;
+    margin: 10px 0 0;
+}
+*/
+div.consejo_txt span{
+    float:left;
+    margin: 10px 10px 10px 0;
+}
+div#colIzq span.btn{
+    border: 1px solid #ADC31D;
+    color: #ADC31D;
+    width: 155px;
+    height: 20px;
+    display: block;
+    line-height: 20px;
+    text-align: center;
+    float: left;
+    margin-bottom: 20px !important;
+    cursor: pointer;
+}
+div.consejo_img{
+    width: 169px;
+    height: 100px;
+    float: left;
+    color: #4d2b2c;
+}
+div.consejo_img img{
+    width: 79px;
+    height: 79px;
+    float: right;
+    margin: 10px 0 0 5px;
+}
+div.consejo_img p{ 
+    width: 60px;
+    height: 30px;
+    float: right;
+    margin: 60px 0 0;
+    text-align: right;
+}
+div#colDer{
+    width: 250px;
+    float: right;
+}
+div#redes *{
+    margin: 0 0 10px 0;
+}
+div#compartir *{
+    margin: 10px 0 0 0;
+}
+div#compartir span.btn{ width: 250px }
+
+.anotaciones {
+    position:absolute;
+    float:left;
+    left: 20px;
+    top:20px;
+    background-color:transparent;
+    color: #4E292B;
+}
+
+.globo {
+    position:absolute;
+    float:left;
+    width: 106px;
+    height: 42px;
+    left: 838px;
+    top:281px;
+    background-image: url("../images/home/tip_del_dia.png");
+    color: #4f292b;
+    text-align:center;
+    font-size: 14px;
+    font-weight: bold;
+    cursor:pointer;
+    padding: 20px 5px;
+}
+
+.texto {
+    color: #fff;
+    text-align:center;
+    font-size: 12px;
+    float:left;
+    padding: 10px 5px;
+    max-width: 750px;
+}
+
+.cerrar, .cerrar-tip {
+    text-align:right;
+    float:right;
+    width: 30px;
+    vertical-align:top;
+    cursor:pointer;
+}
+
+#img_principal {
+    position:relative;
+    float:left;
+}
+
+#tip_del_dia {
+    position:absolute;
+    float:left;
+    left: 130px;
+    top:330px;
+    background-color:#fff;
+    border: 1px solid #adc31d;
+    opacity: .95;
+    display:none;
+}
+.tip-texto {
+    color: #4E292B;
+    text-align:center;
+    font-size: 14px;
+    float:left;
+    padding: 10px 5px;
+    max-width: 750px;
+    font-weight:bold;
+    padding: 5px;    
+}
+
+.txt_type_title {
+    text-transform:capitalize;
+}

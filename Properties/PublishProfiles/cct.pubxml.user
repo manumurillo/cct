@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+Este archivo es utilizado por el proceso de paquete/publicación de nuestro proyecto Web. Puede personalizar el comportamiento de este proceso
+editando este archivo MSBuild. Para conocer más acerca de esto, visite http://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAq8KLzKw6I0a/sXrWb+9qsgAAAAACAAAAAAAQZgAAAAEAACAAAADldR+Zvk9VZE5FDTh0XkaBnKnr0wMz417PWgFZ6PrbtwAAAAAOgAAAAAIAACAAAAD/G2KEDCqSrpErM5VfEvF1Ew5cKdAy9eUHUTGPtncKrCAAAAAY9Y5kejGC/+hpS1zpzkYMwFO0PKw+W2ecRn1tu4wWCEAAAAAGbBYreJv1IpHvo1m++awfH23t6BS4anNWF9hAYSgXgrjQWtGV9fuSOXq9G2viks94A8Ri7e/uKeTNR4D4jjNp</EncryptedPassword>
+    <_PublishTargetUrl>ftp://216.87.164.4:721</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="Articulo.aspx">
+      <publishTime>11/20/2013 07:48:27</publishTime>
+    </File>
+    <File Include="bin/AjaxControlToolkit.dll">
+      <publishTime>10/05/2013 21:51:54</publishTime>
+    </File>
+    <File Include="bin/AjaxMin.dll">
+      <publishTime>09/26/2013 14:48:02</publishTime>
+    </File>
+    <File Include="buenosHabitos.aspx">
+      <publishTime>11/20/2013 02:32:00</publishTime>
+    </File>
+    <File Include="Calctose.aspx">
+      <publishTime>11/19/2013 18:55:07</publishTime>
+    </File>
+    <File Include="comparteConsejos.aspx">
+      <publishTime>11/20/2013 08:57:22</publishTime>
+    </File>
+    <File Include="Default.aspx">
+      <publishTime>11/20/2013 06:59:09</publishTime>
+    </File>
+    <File Include="herramientasMama.aspx">
+      <publishTime>11/14/2013 12:15:32</publishTime>
+    </File>
+    <File Include="Login.aspx">
+      <publishTime>11/17/2013 22:03:17</publishTime>
+    </File>
+    <File Include="Logout.aspx">
+      <publishTime>11/15/2013 13:48:18</publishTime>
+    </File>
+    <File Include="PrecompiledApp.config">
+      <publishTime>11/20/2013 12:06:42</publishTime>
+    </File>
+    <File Include="prueba.aspx">
+      <publishTime>11/15/2013 11:22:37</publishTime>
+    </File>
+    <File Include="Registro.aspx">
+      <publishTime>11/18/2013 17:35:37</publishTime>
+    </File>
+    <File Include="Site.Master">
+      <publishTime>11/19/2013 23:10:16</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>11/20/2013 12:06:38</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

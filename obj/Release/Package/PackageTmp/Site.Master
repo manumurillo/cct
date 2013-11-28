@@ -1,0 +1,77 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.Master.cs" Inherits="WebSite.Site" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+    <link href="styles/mainStyle.css" rel="stylesheet" type="text/css" />
+    <script src="http://code.jquery.com/jquery-1.10.2.min.js" type="text/javascript"></script>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div id="container">
+        <div id="header">
+            <div id="logo" onclick="window.location.replace('Default.aspx')"></div>
+            <div id="session">
+                <%
+                    if (Session["usr_status"] == null)
+                    { 
+                %>
+                        <a href="Login.aspx" class="light">ENTRAR</a> / <a href="Registro.aspx" class="light">REGISTRARSE</a>
+                 <%
+                 }else{
+                  %>
+                        <a href="Logout.aspx" class="light">SALIR</a>
+                <%
+                 }
+                %>
+            </div>
+            <div id="menu">
+                <div class="items" id="cssmenu">
+					<ul>
+                        <li id="item0"></li>
+						<li id="item1"><a href="Default.aspx" class="mix">HÁBITOS EN EL HOGAR CAL-C-TOSE</a>
+							<ul>
+								<li><a class="mix" href="buenosHabitos.aspx?en=habitacion">Habitaci&oacute;n</a></li>
+								<li><a class="mix" href="buenosHabitos.aspx?en=estancia">Estancia</a></li>
+								<li><a class="mix" href="buenosHabitos.aspx?en=estudio">Estudio</a></li>
+								<li><a class="mix" href="buenosHabitos.aspx?en=cocina">Cocina</a></li>
+								<li><a class="mix" href="buenosHabitos.aspx?en=bano">Ba&ntilde;o</a></li>
+								<li><a class="mix" href="buenosHabitos.aspx?en=jardin">Jard&iacute;n</a></li>
+								<li><a class="mix" href="Default.aspx?tip=1">Consejo del d&iacute;a</a></li>
+							</ul>
+						</li>
+						<li id="item2"><a href="herramientasMama.aspx" class="mix">HERRAMIENTAS DE MAMÁ</a></li>
+						<li id="item3"><a href="Calctose.aspx" class="mix">CAL-C-TOSE</a>
+							<ul>
+								<li><a class="mix" href="Calctose.aspx?tema=presentaciones">Presentaciones</a></li>
+								<li><a class="mix" href="Calctose.aspx?tema=ideas-para-el-desayuno">Ideas para el desayuno</a></li>
+								<li><a class="mix" href="Calctose.aspx?tema=la-ciencia-de-calctose">La ciencia de Cal-C-Tose</a></li>
+								<li><a class="mix" href="Calctose.aspx?tema=acerca-de">Acerca de la marca</a></li>
+							</ul>
+						</li>
+						
+						<li id="item4" ><a href="comparteConsejos.aspx" class="mix">COMPARTE TUS CONSEJOS</a></li>
+					</ul>
+		        </div>
+            </div>
+        </div>
+        <div id="pleca"></div>
+        <div id="content">
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        
+            </asp:ContentPlaceHolder>
+        
+        </div>
+        <div id="footer">
+            <p class="normal">2013 Mead Johnson & Company, LLC. Todos los derechos reservados | <a href="http://cal-c-tose.com.mx/legales.aspx" class="dark" target="_blank"> Políticas de Privacidad</a></p>
+        </div>
+    </div>
+    
+    </form>
+</body>
+</html>

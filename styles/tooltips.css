@@ -1,0 +1,103 @@
+﻿.tooltip {
+    width: 190px;
+    height: 180px;
+    padding: 5px;
+    display: none;
+    position:absolute;
+    
+}
+
+    .tooltip > .col1 {
+        float:left;
+        background-color:transparent;
+        vertical-align: top;
+        width: 43px;
+        height: 180px;
+    }
+
+    .tooltip > .col2 {
+        width: 126px;
+        opacity:0.9;
+        filter:alpha(opacity=90);
+        background-color:#fff;
+        float:right;
+        padding: 8px; 
+        border: solid 1px #adc31d;
+    }
+         .tooltip > .col2 > h2 {
+                color:#3c1e20;
+                font-size: 10pt;
+                margin: 0px;
+            }
+
+            .tooltip > .col2 > p {
+                color:#3c1e20;
+                font-size: 8pt;
+                margin: 2px 0px;
+            }
+
+            .tooltip > .col2 > img {
+                margin: 5px auto;
+                width: 124px;
+                max-width: 124px;
+                height: auto;
+                border: 1px solid #adc31d;
+                clear: both;
+            }
+
+            .tooltip > .col2 > p.right{
+                font-size: 8pt;
+                text-align:right;
+                width:100%;
+            }
+
+/*CONTENIDOS*/
+.show_more {
+    width: 700px;
+    height: 450px;
+    background-color: #fff;
+    border: 1px solid #c6e446;
+    padding: 15px;
+    display: none;
+}
+
+.contenido{
+
+    max-height: 400px;
+    overflow: auto;
+}
+    .show_more > .cerrar {
+        float:right;
+        width: 40px;
+        height:50px;
+        margin: -64px -20px 0 0;
+    }
+
+    .show_more > .titulo {
+        float:left;
+        width: 600px;
+        height:50px;
+        word-wrap:break-word;
+    }
+
+        .show_more > .titulo > h2 {
+            font-size: 18px;
+            color: #4f292b;
+            font-weight: bold;
+        }
+
+    .show_more > .contenido {
+        margin-top: 10px;
+        float: left;
+        width: 690px;
+        margin: 10px auto;
+        padding-right: 10px;
+        font-size: 12px;
+        color: #3c1e20;
+    }
+
+    .show_more > .contenido > img {
+        float:left;
+        border: 2px solid #5fad6f;
+        margin: 10px;
+    }
