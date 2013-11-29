@@ -3,14 +3,14 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div style="width:800px; padding-left:60px; height:auto; font-family:Helvetica; color:#000; font-size:9pt; padding-top:30px; text-align:justify; ">
-        <span class="titulos2">Términos de uso</span>
+        <span class="title">Términos de uso</span>
         <p class="sangria">&nbsp;</p>
-        <p class="sangria"><span class="vineta">Bienvenido a www.cal-c-tose.com.mx </span></p>
+        <p class="sangria"><span class="subtitle strong">Bienvenido a www.cal-c-tose.com.mx </span></p>
         <p class="sangria">&nbsp;</p>
         <p class="sangria"><span class="parrafo-Azul">Por favor lea los siguientes términos y condiciones antes de usar esta página. Al accesar y utilizar este Sitio Web, Usted (el "Usuario") reconoce haberlos leído y entendido; por lo tanto declara expresamente la aceptación de los siguientes términos y condiciones:</span><br>
         <span class="parrafo-Azul"><br>
         </span></p>
-        <p class="sangria"><span class="izq-subtitulos">Derechos de Propiedad Industrial e Intelectual</span></p>
+        <p class="sangria"><span class="izq-subtitulos subtitle strong">Derechos de Propiedad Industrial e Intelectual</span></p>
         <p style="margin: 0px 0px 0px 35px; text-align: justify; min-height: 12px; font-family: Century Gothic; font-style: normal; font-variant: normal; font-weight: normal; font-size: 10px; line-height: normal; font-size-adjust: none; font-stretch: normal;">&nbsp;</p>
         <p class="sangria"><span class="parrafo-Azul">Todo el contenido de este Sitio Web es propiedad de Mead Johnson Nutricionales&nbsp; de México S de RL de CV.&nbsp; así como de sus filiales y o subsidiarias de acuerdo con los intereses de cada una de ellas (el "MJN") o bien sus componentes están licenciados con la autorización de los titulares de los derechos correspondientes, por tanto los derechos sobre dicho contenido se encuentran protegidos por las leyes mexicanas y por el derecho internacional aplicable. El contenido de este sitio es aplicable para el mercado mexicano. <br>
         </span></p>
@@ -25,7 +25,7 @@
         <p class="sangria">&nbsp;</p>
         <p class="sangria"><span class="parrafo-Azul">De igual forma el Usuario deberá abstenerse de intentar realizar o realizar cualquier tipo de adición, supresión, transformación o cualquier otra forma de alteración al contenido de este sitio. Asimismo el Usuario no deberá suprimir o alterar en forma alguna cualquier dato que identifique la titularidad de derechos sobre cualquier contenido de este sitio.</span></p>
         <p class="sangria">&nbsp;</p>
-        <p class="sangria"><span class="izq-subtitulos">Responsabilidades</span></p>
+        <p class="sangria"><span class="izq-subtitulos subtitle strong">Responsabilidades</span></p>
         <p class="sangria">&nbsp;</p>
         <p class="sangria"><span class="parrafo-Azul">MJN está preocupado por ofrecer un Sitio Web confiable y de calidad a todos sus Usuarios, procura revisar y actualizar los elementos que conforman el contenido de su sitio, siendo sin embargo pertinente informar al Usuario que además de las exclusiones de responsabilidad que se puedan mencionar específicamente en este sitio, en forma enunciativa mas no limitativa, se encuentran las que se mencionan a continuación, por lo anterior MJN:</span></p>
         <p class="sangria">&nbsp;</p>
@@ -55,7 +55,7 @@
         <p class="sangria">&nbsp;</p>
         <p class="sangria">&nbsp;</p>
         <p class="sangria">&nbsp;</p>
-        <p class="sangria"><span class="izq-subtitulos"><b><u>AVISO DE PRIVACIDAD</u></b></span></p>
+        <p class="sangria"><span class="izq-subtitulos subtitle strong"><b><u>AVISO DE PRIVACIDAD</u></b></span></p>
         <p class="sangria">&nbsp;</p>
         <p class="sangria"><span class="parrafo-Azul"><b>MEAD JOHNSON NUTRICIONALES DE MÉXICO, S. DE R.L. DE C.V. </b>(en adelante MEAD JOHNSON), sociedad constituida conforme a la legislación mexicana, con sede en Edificio Presa Falcón piso 12, Lago Zurich 245, Col. Ampliación Granada, Delegación Miguel Hidalgo, C.P. 11529, en México, D.F., es la responsable de este sitio web y su contenido.</span></p>
         <p class="sangria"><span class="parrafo-Azul">&nbsp;</span></p>

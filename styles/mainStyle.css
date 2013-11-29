@@ -97,17 +97,17 @@
     color: #adc31d;
 }
 
-.session_usr
-{
+.session_usr {
     width: 157px;
     height: 16px;
     margin: 20px 10px 10px 10px;
     float: right;
     font-weight: bold;
-    text-align:right;
-    padding-top:4px;
-    font-size:12px;
+    text-align: right;
+    padding-top: 4px;
+    font-size: 12px;
     color: #4D2A2B;
+    text-transform:capitalize;
 }
 
 a.light:link {
