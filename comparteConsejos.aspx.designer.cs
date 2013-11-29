@@ -58,6 +58,15 @@ namespace WebSite {
         protected global::System.Web.UI.WebControls.ListView ListView1;
         
         /// <summary>
+        /// Control Mensaje.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl Mensaje;
+        
+        /// <summary>
         /// Control resultado_consejo.
         /// </summary>
         /// <remarks>
@@ -193,6 +202,15 @@ namespace WebSite {
         protected global::System.Web.UI.WebControls.Label labelEmail_l;
         
         /// <summary>
+        /// Control email_l.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox email_l;
+        
+        /// <summary>
         /// Control RequiredEmail_l.
         /// </summary>
         /// <remarks>
@@ -211,15 +229,6 @@ namespace WebSite {
         protected global::System.Web.UI.WebControls.RegularExpressionValidator ValidateEmail_l;
         
         /// <summary>
-        /// Control email_l.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox email_l;
-        
-        /// <summary>
         /// Control labelContrasena_l.
         /// </summary>
         /// <remarks>
@@ -229,15 +238,6 @@ namespace WebSite {
         protected global::System.Web.UI.WebControls.Label labelContrasena_l;
         
         /// <summary>
-        /// Control RequiredContrasena_l.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredContrasena_l;
-        
-        /// <summary>
         /// Control contrasena_l.
         /// </summary>
         /// <remarks>
@@ -245,6 +245,15 @@ namespace WebSite {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox contrasena_l;
+        
+        /// <summary>
+        /// Control RequiredContrasena_l.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredContrasena_l;
         
         /// <summary>
         /// Control loginSubmit.

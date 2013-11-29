@@ -73,10 +73,8 @@ namespace WebSite
                 string c_categoria = categoria.SelectedValue.ToString();
                 string c_consejo = consejo.Text;
 
-                //resultado_consejo.Text = ""+c_categoria;
-
-                string insertSQL = "INSERT INTO articulo (titulo, contenido, id_categoria, id_registro_usuario)";
-                insertSQL += "VALUES (@titulo, @contenido, @id_categoria, @id_registro_usuario)";
+                string insertSQL = "INSERT INTO articulo (titulo, contenido, id_categoria, id_registro_usuario, tipo)";
+                insertSQL += "VALUES (@titulo, @contenido, @id_categoria, @id_registro_usuario, @tipo)";
 
                 SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["CCT2013ConnectionString"].ToString());
                 SqlCommand cmd = new SqlCommand(insertSQL, conn);
@@ -85,19 +83,20 @@ namespace WebSite
                 cmd.Parameters.AddWithValue("@contenido", c_consejo);
                 cmd.Parameters.AddWithValue("@id_categoria", Convert.ToInt16(c_categoria));
                 cmd.Parameters.AddWithValue("@id_registro_usuario", usr_id);
+                cmd.Parameters.AddWithValue("@tipo", 2);
 
                 int added = 0;
                 try
                 {
                     conn.Open();
                     added = cmd.ExecuteNonQuery();
-                    resultado_consejo.Text = "Su consejo se ha enviado, gracias.";
+                    Mensaje.InnerText = "Su consejo se ha enviado, gracias.";
                     titulo.Text = categoria.Text = consejo.Text = "";
+                    Response.Redirect("comparteConsejos.aspx");
                 }
-                catch (Exception err)
+                catch (Exception)
                 {
-                    resultado_consejo.Text = "Ha ocurrido un error. ";
-                    resultado_consejo.Text += err.Message;
+                    Mensaje.InnerText = "Ha ocurrido un error. ";
                 }
                 finally
                 {
@@ -107,19 +106,8 @@ namespace WebSite
             }
             else
             {
-                resultado_consejo.Text = "Revise por favor.";
+                Response.Redirect("Login.aspx");
             }
-        }
-
-        protected void login_Click(object sender, EventArgs e)
-        {
-            //login_form.Visible = true;
-            //form_buttons.Visible = false;
-        }
-
-        protected void registro_Click(object sender, EventArgs e)
-        {
-
         }
 
         protected void loginSubmit_Click(object sender, EventArgs e)
@@ -142,11 +130,11 @@ namespace WebSite
                     Session["usr_status"] = "activo";
                     Session["usr_id"] = id_user;
                     Session["usr_nombre"] = usr_nombre;
-                    Response.Redirect("comparteConsejos.aspx");
+                    Mensaje.InnerText = "Bienvenid@ " + usr_nombre;
                 }
                 else
                 {
-                    errorSesion.Text = "Usuario o contraseña incorrectos.";
+                    Mensaje.InnerText = "Usuario o contraseña incorrectos.";
                 }
                 reader.Close();
                 conn.Close();
@@ -178,55 +166,58 @@ namespace WebSite
                     string usr_email = (string)(email.Text);
                     string usr_pass = encript(contrasena.Text);
 
-
-                    //string f_n = usr_fnac.Substring(0, 4)+"/"+usr_fnac.Substring(5, 2)+"/"+usr_fnac.Substring(8, 2);
-
-                    string insertSQL;
-                    insertSQL = "INSERT INTO registro_usuario (nombre, apellidoPaterno, apellidoMaterno, email, estado, contrasena, fechaNacimiento)";
-                    insertSQL += "VALUES (@nombre, @apellidoPaterno, @apellidoMaterno, @email, @estado, @contrasena, @fechaNacimiento)";
-
-                    SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["CCT2013ConnectionString"].ToString());
-                    SqlCommand cmd = new SqlCommand(insertSQL, conn);
-
-                    cmd.Parameters.AddWithValue("@nombre", usr_nombre);
-                    cmd.Parameters.AddWithValue("@apellidoPaterno", usr_apPaterno);
-                    cmd.Parameters.AddWithValue("@apellidoMaterno", usr_apMaterno);
-                    cmd.Parameters.AddWithValue("@email", usr_email);
-                    cmd.Parameters.AddWithValue("@estado", usr_estado);
-                    cmd.Parameters.AddWithValue("@contrasena", usr_pass);
-                    cmd.Parameters.AddWithValue("@fechaNacimiento", usr_fnac);
-
-                    int added = 0;
-                    try
+                    if (userExist(usr_email))
                     {
-                        conn.Open();
-                        added = cmd.ExecuteNonQuery();
-                        resultado.Text = "Registro Exitoso";
-
-                        string query2 = "SELECT id, nombre FROM registro_usuario WHERE email LIKE '"+usr_email+"'";
-                        SqlCommand cmd2 = new SqlCommand(query2, conn);
-                        SqlDataReader reader = cmd2.ExecuteReader();
-                        if (reader.Read())
-                        {
-                            Session["usr_email"] = usr_email;
-                            Session["usr_id"] = reader["id"];
-                            Session["usr_status"] = "activo";
-                            Session["usr_nombre"] = reader["nombre"];
-                            Response.Redirect("comparteConsejos.aspx");
-                        }
-                        else
-                        {
-                            Response.Redirect("Login.aspx");
-                        }
+                        Mensaje.InnerText = "La dirección " + usr_email + " ya está registrada.";
                     }
-                    catch (Exception err)
+                    else
                     {
-                        resultado.Text = "Error al registrar sus datos. ";
-                        resultado.Text += err.Message;
-                    }
-                    finally
-                    {
-                        conn.Close();
+                        string insertSQL;
+                        insertSQL = "INSERT INTO registro_usuario (nombre, apellidoPaterno, apellidoMaterno, email, estado, contrasena, fechaNacimiento)";
+                        insertSQL += "VALUES (@nombre, @apellidoPaterno, @apellidoMaterno, @email, @estado, @contrasena, @fechaNacimiento)";
+
+                        SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["CCT2013ConnectionString"].ToString());
+                        SqlCommand cmd = new SqlCommand(insertSQL, conn);
+
+                        cmd.Parameters.AddWithValue("@nombre", usr_nombre);
+                        cmd.Parameters.AddWithValue("@apellidoPaterno", usr_apPaterno);
+                        cmd.Parameters.AddWithValue("@apellidoMaterno", usr_apMaterno);
+                        cmd.Parameters.AddWithValue("@email", usr_email);
+                        cmd.Parameters.AddWithValue("@estado", usr_estado);
+                        cmd.Parameters.AddWithValue("@contrasena", usr_pass);
+                        cmd.Parameters.AddWithValue("@fechaNacimiento", usr_fnac);
+
+                        int added = 0;
+                        try
+                        {
+                            conn.Open();
+                            added = cmd.ExecuteNonQuery();
+                            resultado.Text = "Registro Exitoso";
+
+                            string query2 = "SELECT id, nombre FROM registro_usuario WHERE email LIKE '"+usr_email+"'";
+                            SqlCommand cmd2 = new SqlCommand(query2, conn);
+                            SqlDataReader reader = cmd2.ExecuteReader();
+                            if (reader.Read())
+                            {
+                                Session["usr_email"] = usr_email;
+                                Session["usr_id"] = reader["id"];
+                                Session["usr_status"] = "activo";
+                                Session["usr_nombre"] = reader["nombre"];
+                                Response.Redirect("comparteConsejos.aspx");
+                            }
+                            else
+                            {
+                                Response.Redirect("Login.aspx");
+                            }
+                        }
+                        catch (Exception)
+                        {
+                            Mensaje.InnerText = "Error al registrar sus datos. ";
+                        }
+                        finally
+                        {
+                            conn.Close();
+                        }
                     }
 
                 }
@@ -255,6 +246,21 @@ namespace WebSite
             {
                 return false;
             }
+        }
+
+        protected bool userExist(string email)
+        {
+            SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["CCT2013ConnectionString"].ToString());
+            string consulta = "SELECT count(*) FROM registro_usuario WHERE email LIKE '"+email+"' ";
+            conn.Open();
+            SqlCommand cmd = new SqlCommand(consulta, conn);
+
+            int res = Convert.ToInt32(cmd.ExecuteScalar());
+            conn.Close();
+            if (res == 1)
+                return true;
+            else
+                return false;  
         }
     }
 }

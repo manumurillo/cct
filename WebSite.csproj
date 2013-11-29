@@ -138,12 +138,12 @@
     <Content Include="images\spots\seguridad_al_tel_smll.png" />
     <Content Include="images\spots\sushi_smll.png" />
     <Content Include="images\user.png" />
+    <Content Include="Layouts.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="Logout.aspx" />
     <Content Include="prueba.aspx" />
     <Content Include="recuperarContrasena.aspx" />
     <Content Include="Registro.aspx" />
-    <Content Include="Sample.aspx" />
     <Content Include="scripts\form.js" />
     <Content Include="scripts\home.js" />
     <Content Include="scripts\jquery.maskedinput.js" />
@@ -209,6 +209,13 @@
     <Compile Include="comparteConsejos.aspx.designer.cs">
       <DependentUpon>comparteConsejos.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Layouts.aspx.cs">
+      <DependentUpon>Layouts.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Layouts.aspx.designer.cs">
+      <DependentUpon>Layouts.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -244,13 +251,6 @@
     </Compile>
     <Compile Include="Registro.aspx.designer.cs">
       <DependentUpon>Registro.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Sample.aspx.cs">
-      <DependentUpon>Sample.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Sample.aspx.designer.cs">
-      <DependentUpon>Sample.aspx</DependentUpon>
     </Compile>
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>

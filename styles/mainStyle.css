@@ -998,3 +998,11 @@ div#compartir span.btn{ width: 250px }
 .txt_type_title {
     text-transform:capitalize;
 }
+
+.mensaje {
+    font-size: 12px;
+    font-weight: bold;
+    margin: 3px 0;
+    text-align:center;
+    color:#cf4221;
+}

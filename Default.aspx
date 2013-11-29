@@ -61,7 +61,9 @@
     <div id="col2-3">
         <p class="title">COMPARTE TUS CONSEJOS</p>
         <p class="subtitle">CON OTRAS MAMÁS</p>
-        <div class="space-10"></div>
+        <div class="space-5"></div>
+        <div class="mensaje" runat="server" id="Mensaje"></div>
+        <div class="space-5"></div>
         
         <%
             if (Session["usr_status"] != null)
@@ -75,10 +77,10 @@
             <div class="space-5"></div>
            
             <asp:Label runat="server" CssClass="label">TÍTULO</asp:Label><br />
-            <asp:TextBox ID="titulo" CssClass="input-text" runat="server" TabIndex="1"></asp:TextBox>
+            <asp:TextBox ID="titulo" CssClass="input-text" runat="server" TabIndex="1" ToolTip="Escriba el título de su consejo"></asp:TextBox>
             <div class="space-5"></div>
             <asp:Label ID="Label1" runat="server" CssClass="label">CATEGORÍA</asp:Label><br />
-             <asp:DropDownList ID="categoria" runat="server" TabIndex="2">
+             <asp:DropDownList ID="categoria" runat="server" TabIndex="2" ToolTip="Seleccione la categoría a la que pertenecerá su consejo">
                 <asp:ListItem Value="1">Habitación</asp:ListItem>
                 <asp:ListItem Value="2">Estancia</asp:ListItem>
                 <asp:ListItem Value="3">Estudio</asp:ListItem>
@@ -89,7 +91,7 @@
             <div class="space-5"></div>
 
             <asp:Label ID="Label3" runat="server" CssClass="label">TU CONSEJO</asp:Label><br />
-            <asp:TextBox ID="consejo" CssClass="input-text" runat="server" TextMode="MultiLine" Height="103px" TabIndex="3"></asp:TextBox>
+            <asp:TextBox ID="consejo" CssClass="input-text" runat="server" TextMode="MultiLine" Height="103px" TabIndex="3" ToolTip="Redacte aquí el consejo que quiere compartir"></asp:TextBox>
             <div class="space-10"></div>
             <asp:Button ID="compartir" runat="server" CssClass="button" Text="COMPARTIR" OnClick="compartir_Click" TabIndex="4" />
 
@@ -111,58 +113,52 @@
             else{ 
         %>
         <div class="gen_form" id="form_buttons">
-            <div class="space-10"></div>
             <p class="subtitle"><b>PARA COMPARTIR TUS CONSEJOS...</b></p>
-
             <div class="space-10"></div>
-            <asp:Button ID="login" runat="server" CssClass="button" Text="INICIA SESIÓN" OnClick="login_Click" TabIndex="1" />
-
+            
+            <asp:Button ID="login" runat="server" CssClass="button" Text="INICIA SESIÓN" TabIndex="1" />
             <div class="space-10"></div>
-            <asp:Button ID="registro" runat="server" CssClass="button" Text="REGÍSTRATE AQUÍ" OnClick="registro_Click" TabIndex="2" />
+            <asp:Button ID="registro" runat="server" CssClass="button" Text="REGÍSTRATE AQUÍ" TabIndex="2" />
         </div>  
 
         <div class="gen_form" id="log_form" style="display:none;">
-            <div class="subtitle">Por favor, indique su dirección de correo y contraseña para iniciar sesión.</div> <br />
-            <asp:Label ID="errorSesion" runat="server" Text=""></asp:Label>
-    
-                <div class="space-10"></div>
+            <div class="subtitle">Por favor, indique su dirección de correo y contraseña para iniciar sesión.</div>
+            <div class="space-10"></div>
         
-            <asp:Label ID="labelEmail_l" runat="server" Text="Correo Electrónico" CssClass="label"></asp:Label>
+            <asp:Label ID="labelEmail_l" runat="server" Text="Correo Electrónico" CssClass="label"></asp:Label><br />
+            <asp:TextBox ID="email_l" runat="server" CssClass="input-text" MaxLength="60" ToolTip="Escriba su dirección de correo electrónico" CausesValidation="True" TabIndex="1"></asp:TextBox>
                 <asp:RequiredFieldValidator ID="RequiredEmail_l" runat="server" ErrorMessage="El email es requerido" ValidationGroup="ValidacionLogin" ControlToValidate="email_l" CssClass="errorMsg" Display="Dynamic"></asp:RequiredFieldValidator>
                 <asp:RegularExpressionValidator ID="ValidateEmail_l" runat="server" ErrorMessage="Formato no válido" ValidationGroup="ValidacionLogin" ControlToValidate="email_l" Display="Dynamic" CssClass="errorMsg" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"></asp:RegularExpressionValidator>
-            <br />
-            <asp:TextBox ID="email_l" runat="server" CssClass="input-text" MaxLength="60" ToolTip="Escriba su dirección de correo electrónico" CausesValidation="True"></asp:TextBox>
             <div class="space-5"></div>
 
-            <asp:Label ID="labelContrasena_l" runat="server" CssClass="label" Text="Contraseña"></asp:Label> 
-                <asp:RequiredFieldValidator ID="RequiredContrasena_l" runat="server" ErrorMessage="Escriba su contraseña" ValidationGroup="ValidacionLogin" ControlToValidate="contrasena_l" Display="Dynamic" CssClass="errorMsg"></asp:RequiredFieldValidator>    <br />
-            <asp:TextBox ID="contrasena_l" runat="server" MaxLength="10" CssClass="input-text" TextMode="Password" CausesValidation="True" ToolTip="Escriba su contraseña"></asp:TextBox>
+            <asp:Label ID="labelContrasena_l" runat="server" CssClass="label" Text="Contraseña"></asp:Label> <br />
+            <asp:TextBox ID="contrasena_l" runat="server" MaxLength="10" CssClass="input-text" TextMode="Password" CausesValidation="True" ToolTip="Escriba su contraseña" TabIndex="2"></asp:TextBox>
+                <asp:RequiredFieldValidator ID="RequiredContrasena_l" runat="server" ErrorMessage="Escriba su contraseña" ValidationGroup="ValidacionLogin" ControlToValidate="contrasena_l" Display="Dynamic" CssClass="errorMsg"></asp:RequiredFieldValidator>
             <div class="space-5"></div>
 
             <p class="normal text-right"><a href="recuperarContrasena.aspx" class="mix">Olvidé mi contraseña</a></p>
             <div class="space-10"></div>
-            <asp:Button ID="loginSubmit" runat="server" Text="Iniciar sesión" CssClass="button" OnClick="loginSubmit_Click" ControlToValidate="email_l" ViewStateMode="Inherit" ValidationGroup="ValidacionLogin" />
+            <asp:Button ID="loginSubmit" runat="server" Text="Iniciar sesión" CssClass="button" OnClick="loginSubmit_Click" ControlToValidate="email_l" ViewStateMode="Inherit" ValidationGroup="ValidacionLogin" TabIndex="3" />
             <div class="space-10"></div>
         </div>
 
         <div id="form_registro" class="gen_form" style="display:none;">
             <div class="title">Regístrate</div>
-            <div class="subtitle">Forma parte de nuestra comunidad para formar un <strong>Hogar Cal-C-Tose</strong></div>
+            <div class="subtitle">Todos los campos son obligatorios.</div>
             <div class="space-10"></div>
                 <asp:Label ID="LabelNombre" runat="server" CssClass="label" Text="Nombre"></asp:Label><br />
                 <asp:TextBox ID="nombre" runat="server" CssClass="input-text small" MaxLength="100" ToolTip="Escriba su(s) nombre(s)" TabIndex="1"></asp:TextBox>
-                <br /><asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Escriba su nombre" SetFocusOnError="True" ControlToValidate="nombre" Display="Dynamic" CssClass="errorMsg"></asp:RequiredFieldValidator>
+                    <br /><asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Escriba su nombre" SetFocusOnError="True" ControlToValidate="nombre" Display="Dynamic" CssClass="errorMsg"></asp:RequiredFieldValidator>
                 <div class="space-5"></div>
 
                 <asp:Label ID="LabelAP" runat="server" CssClass="label" Text="Apellido paterno"></asp:Label><br />
                 <asp:TextBox ID="apPaterno" runat="server" ToolTip="Escriba su apellido paterno" MaxLength="100" CssClass="input-text small" TabIndex="2"></asp:TextBox>
-                <br /><asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ErrorMessage="Escriba su apellido paterno" SetFocusOnError="True" ControlToValidate="apPaterno" Display="Dynamic" CssClass="errorMsg"></asp:RequiredFieldValidator>
+                    <br /><asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ErrorMessage="Escriba su apellido paterno" SetFocusOnError="True" ControlToValidate="apPaterno" Display="Dynamic" CssClass="errorMsg"></asp:RequiredFieldValidator>
                 <div class="space-5"></div>
 
-                <asp:Label ID="LabelAM" runat="server" CssClass="label" Text="Apellido materno"></asp:Label>
-                <br />
+                <asp:Label ID="LabelAM" runat="server" CssClass="label" Text="Apellido materno"></asp:Label><br />
                 <asp:TextBox ID="apMaterno" runat="server" CssClass="input-text small" ToolTip="Escriba su apellido materno" MaxLength="100" TabIndex="3"></asp:TextBox>
-                <br /><asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="Escriba su apellido materno" SetFocusOnError="True" ControlToValidate="apMaterno" Display="Dynamic" CssClass="errorMsg"></asp:RequiredFieldValidator>
+                 <br /><asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="Escriba su apellido materno" SetFocusOnError="True" ControlToValidate="apMaterno" Display="Dynamic" CssClass="errorMsg"></asp:RequiredFieldValidator>
                 <div class="space-5"></div>
 
                 <asp:Label ID="LabelEstado" runat="server" CssClass="label" Text="Estado"></asp:Label><br />
@@ -236,34 +232,30 @@
                 <div class="space-5"></div>
 
                 <asp:Label ID="LabelEmail" runat="server" CssClass="label" Text="Correo electrónico"></asp:Label><br />
-                <asp:TextBox ID="email" runat="server" ToolTip="Escriba su e-mail" MaxLength="100" CssClass="input-text small" TabIndex="6" Rows="8"></asp:TextBox>
-                <br /><asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ErrorMessage="Escriba su email" SetFocusOnError="True" ControlToValidate="email" Display="Dynamic" CssClass="errorMsg"></asp:RequiredFieldValidator>            
-                <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ErrorMessage="El formato del correo no es válido" CssClass="errorMsg" Display="Dynamic" ControlToValidate="email" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"></asp:RegularExpressionValidator>
+                <asp:TextBox ID="email" runat="server" ToolTip="Escriba su e-mail" MaxLength="100" CssClass="input-text small" TabIndex="8" Rows="8"></asp:TextBox>
+                    <br /><asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ErrorMessage="Escriba su email" SetFocusOnError="True" ControlToValidate="email" Display="Dynamic" CssClass="errorMsg"></asp:RequiredFieldValidator>
+                    <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ErrorMessage="El formato del correo no es válido" CssClass="errorMsg" Display="Dynamic" ControlToValidate="email" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"></asp:RegularExpressionValidator>
                 <div class="space-5"></div>
                 
                 <asp:Label ID="LabelContrasena1" runat="server" CssClass="label" Text="Contraseña"></asp:Label><br />
-                <asp:TextBox ID="contrasena" runat="server" ToolTip="Escriba una contraseña para esta cuenta" MaxLength="20" CssClass="input-text small" TabIndex="7" TextMode="Password" Rows="9"></asp:TextBox>
-                <br /><asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ErrorMessage="Escriba su contraseña" SetFocusOnError="True" ControlToValidate="contrasena" Display="Dynamic" CssClass="errorMsg"></asp:RequiredFieldValidator>
-                <asp:RegularExpressionValidator ID="RegExp1" runat="server" ErrorMessage="La contraseña debe tener entre 8 y 10 caracteres" Display="Dynamic" CssClass="errorMsg" ControlToValidate="contrasena" ValidationExpression="^[a-zA-Z0-9'@&#.\s]{8,10}$" />
+                <asp:TextBox ID="contrasena" runat="server" ToolTip="Escriba una contraseña para esta cuenta" MaxLength="20" CssClass="input-text small" TabIndex="9" TextMode="Password" Rows="9"></asp:TextBox>
+                    <br /><asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ErrorMessage="Escriba su contraseña" SetFocusOnError="True" ControlToValidate="contrasena" Display="Dynamic" CssClass="errorMsg"></asp:RequiredFieldValidator>
+                    <asp:RegularExpressionValidator ID="RegExp1" runat="server" ErrorMessage="La contraseña debe tener entre 8 y 10 caracteres" Display="Dynamic" CssClass="errorMsg" ControlToValidate="contrasena" ValidationExpression="^[a-zA-Z0-9'@&#.\s]{8,10}$" />
                 <div class="space-5"></div>
 
                 <asp:Label ID="LabelContrasena2" runat="server" CssClass="label" Text="Confirmar contraseña"></asp:Label><br />
-                <asp:TextBox ID="confirmContrasena" runat="server" ToolTip="Escriba de nuevo su contraseña" MaxLength="20" CssClass="input-text small" TabIndex="8" TextMode="Password" Rows="10"></asp:TextBox>
-                <br /><asp:CompareValidator ID="CompareValidator1" runat="server" ErrorMessage="Las contraseñas no coinciden" ControlToValidate="confirmContrasena" ControlToCompare="contrasena" CssClass="errorMsg"></asp:CompareValidator>    
-                <br /><asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" ErrorMessage="Confirme la contraseña" SetFocusOnError="True" ControlToValidate="confirmContrasena" Display="Dynamic" CssClass="errorMsg"></asp:RequiredFieldValidator>
+                <asp:TextBox ID="confirmContrasena" runat="server" ToolTip="Escriba de nuevo su contraseña" MaxLength="20" CssClass="input-text small" TabIndex="10" TextMode="Password" Rows="10"></asp:TextBox>
+                    <br /><asp:CompareValidator ID="CompareValidator1" runat="server" ErrorMessage="Las contraseñas no coinciden" ControlToValidate="confirmContrasena" ControlToCompare="contrasena" CssClass="errorMsg" Display="Dynamic"></asp:CompareValidator>    
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" ErrorMessage="Confirme la contraseña" SetFocusOnError="True" ControlToValidate="confirmContrasena" Display="Dynamic" CssClass="errorMsg"></asp:RequiredFieldValidator>
                 <div class="space-5"></div>
 
-                <asp:CheckBox ID="acepto" runat="server" ToolTip="Acepto los Términos y Condiciones" CssClass="checkBox" TabIndex="9" />
-                <asp:Label ID="LabelTyC" runat="server" CssClass="label" Text="Acepto los Términos y Condiciones y las Políticas de Privacidad" TabIndex="9"></asp:Label>
-                <br /><div class="errorMsg"><asp:Label ID="errorAcepto" runat="server" Text=""></asp:Label></div>
+                <asp:CheckBox ID="acepto" runat="server" ToolTip="Acepto los Términos y Condiciones" CssClass="checkBox" TabIndex="11" />
+                <asp:Label ID="LabelTyC" runat="server" CssClass="label" Text="Acepto los Términos y Condiciones y las Políticas de Privacidad"></asp:Label>
+                    <br /><div class="errorMsg"><asp:Label ID="errorAcepto" runat="server" Text=""></asp:Label></div>
                 <div class="space-5"></div>
 
-                <asp:Button ID="regiterSubmit" runat="server" Text="Registrarme" ToolTip="Registrarme en Cal-C-Tose" CssClass="button small" TabIndex="10" OnClick="registerSubmit_Click" />
-
-                <div class="space-5"></div>
-
-            <asp:Label ID="resultado" runat="server" Text=""></asp:Label>
-        </div>
+                <asp:Button ID="regiterSubmit" runat="server" Text="Registrarme" ToolTip="Registrarme en Cal-C-Tose" CssClass="button small" TabIndex="12" OnClick="registerSubmit_Click" />
+           </div>
         <%
         }
 %>

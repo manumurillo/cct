@@ -17,11 +17,6 @@ namespace WebSite
         public bool muestra = false;
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!Page.IsPostBack)
-            {
-                categoria.SelectedIndex = 1;
-            }
-
             if(Request.QueryString["tip"] == "1")
             {
                 muestra = true;
@@ -52,31 +47,28 @@ namespace WebSite
                 string c_categoria = categoria.SelectedItem.Value;
                 string c_consejo = consejo.Text;
 
-                string insertSQL = "INSERT INTO articulo (titulo, contenido, id_categoria, id_registro_usuario)";
-                insertSQL += "VALUES (@titulo, @contenido, @id_categoria, @id_registro_usuario)";
+                string insertSQL = "INSERT INTO articulo (titulo, contenido, id_categoria, id_registro_usuario, tipo)";
+                insertSQL += "VALUES (@titulo, @contenido, @id_categoria, @id_registro_usuario, @tipo)";
 
                 SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["CCT2013ConnectionString"].ToString());
                 SqlCommand cmd = new SqlCommand(insertSQL, conn);
-
                 
                 cmd.Parameters.AddWithValue("@titulo", c_titulo);
                 cmd.Parameters.AddWithValue("@contenido", c_consejo);
                 cmd.Parameters.AddWithValue("@id_categoria", c_categoria);
                 cmd.Parameters.AddWithValue("@id_registro_usuario", usr_id);
-               
+                cmd.Parameters.AddWithValue("@tipo", 2);
 
                 int added = 0;
                 try
                 {
                     conn.Open();
                     added = cmd.ExecuteNonQuery();
-                    resultado_consejo.Text ="Su consejo se ha enviado, gracias.";
                     titulo.Text = categoria.Text = consejo.Text = "";
                 }
-                catch (Exception err)
+                catch (Exception)
                 {
-                    resultado_consejo.Text = "Ha ocurrido un error. ";
-                    resultado_consejo.Text += err.Message;
+                    Mensaje.InnerText = "Ha ocurrido un error. ";
                 }
                 finally
                 {
@@ -86,20 +78,10 @@ namespace WebSite
             }
             else
             {
-                resultado_consejo.Text = "Revise por favor.";
+                Response.Redirect("Login.aspx");
             }
         }
 
-        protected void login_Click(object sender, EventArgs e)
-        {
-            //login_form.Visible = true;
-            //form_buttons.Visible = false;
-        }
-
-        protected void registro_Click(object sender, EventArgs e)
-        {
-
-        }
 
         protected void loginSubmit_Click(object sender, EventArgs e)
         {
@@ -121,12 +103,11 @@ namespace WebSite
                     Session["usr_status"] = "activo";
                     Session["usr_id"] = id_user;
                     Session["usr_nombre"] = usr_nombre;
-                    Response.Redirect("comparteConsejos.aspx");
+                    Mensaje.InnerText = "Bienvenid@ "+ usr_nombre;
                 }
                 else
                 {
-                    errorSesion.Text = "Usuario o contraseña incorrectos.";
-                    Response.Redirect("Login.aspx");
+                    Mensaje.InnerText = "Usuario o contraseña incorrectos.";
                 }
                 reader.Close();
                 conn.Close();
@@ -145,22 +126,25 @@ namespace WebSite
         protected void registerSubmit_Click(object sender, EventArgs e)
         {
             string usr_fnac = (string)(anio.Text) + '/' + (string)(mes.Text) + '/' + (string)(dia.Text);
-                if (isDateValid(usr_fnac))
+            if (isDateValid(usr_fnac))
+            {
+                errorFNac.Text = "";
+                if (acepto.Checked)
                 {
-                    errorFNac.Text = "";
-                    if (acepto.Checked)
+                    errorAcepto.Text = "";
+                    string usr_nombre = (string)(nombre.Text);
+                    string usr_apPaterno = (string)(apPaterno.Text);
+                    string usr_apMaterno = (string)(apMaterno.Text);
+                    string usr_estado = (string)(estado.Text);
+                    string usr_email = (string)(email.Text);
+                    string usr_pass = encript(contrasena.Text);
+
+                    if (userExist(usr_email))
                     {
-                        errorAcepto.Text = "";
-                        string usr_nombre = (string)(nombre.Text);
-                        string usr_apPaterno = (string)(apPaterno.Text);
-                        string usr_apMaterno = (string)(apMaterno.Text);
-                        string usr_estado = (string)(estado.Text);
-                        string usr_email = (string)(email.Text);
-                        string usr_pass = encript(contrasena.Text);
-
-
-                        //string f_n = usr_fnac.Substring(0, 4)+"/"+usr_fnac.Substring(5, 2)+"/"+usr_fnac.Substring(8, 2);
-
+                        Mensaje.InnerText = "La dirección " + usr_email + " ya está registrada.";
+                    }
+                    else
+                    {
                         string insertSQL;
                         insertSQL = "INSERT INTO registro_usuario (nombre, apellidoPaterno, apellidoMaterno, email, estado, contrasena, fechaNacimiento)";
                         insertSQL += "VALUES (@nombre, @apellidoPaterno, @apellidoMaterno, @email, @estado, @contrasena, @fechaNacimiento)";
@@ -181,9 +165,9 @@ namespace WebSite
                         {
                             conn.Open();
                             added = cmd.ExecuteNonQuery();
-                            resultado.Text = "Registro Exitoso";
+                            Mensaje.InnerText = "Registro Exitoso";
 
-                            string query2 = "SELECT id, nombre FROM registro_usuario WHERE LIKE '" + usr_email + "'";
+                            string query2 = "SELECT id, nombre FROM registro_usuario WHERE email LIKE '" + usr_email + "'";
                             SqlCommand cmd2 = new SqlCommand(query2, conn);
                             SqlDataReader reader = cmd2.ExecuteReader();
                             if (reader.Read())
@@ -192,35 +176,49 @@ namespace WebSite
                                 Session["usr_id"] = reader["id"];
                                 Session["usr_status"] = "activo";
                                 Session["usr_nombre"] = reader["nombre"];
-                                Response.Redirect("comparteConsejos.aspx");
                             }
                             else
                             {
                                 Response.Redirect("Login.aspx");
                             }
                         }
-                        catch (Exception err)
+                        catch (Exception )
                         {
-                            resultado.Text = "Error al registrar sus datos. ";
-                            resultado.Text += err.Message;
+                            Mensaje.InnerText = "Error al registrar sus datos. ";
                         }
                         finally
                         {
                             conn.Close();
                         }
+                    }
 
-                    }
-                    else
-                    {
-                        errorAcepto.Text = "Debe aceptar los Términos y Condiciones";
-                    }
                 }
                 else
                 {
-                    errorFNac.Text = "La fecha no es válida";
-
+                    errorAcepto.Text = "Debe aceptar los Términos y Condiciones";
                 }
             }
+            else
+            {
+                errorFNac.Text = "La fecha no es válida";
+
+            }
+        }
+
+        protected bool userExist(string email)
+        {
+            SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["CCT2013ConnectionString"].ToString());
+            string consulta = "SELECT count(*) FROM registro_usuario WHERE email LIKE '" + email + "' ";
+            conn.Open();
+            SqlCommand cmd = new SqlCommand(consulta, conn);
+
+            int res = Convert.ToInt32(cmd.ExecuteScalar());
+            conn.Close();
+            if (res == 1)
+                return true;
+            else
+                return false;
+        }
 
         protected bool isDateValid(string date)
         {

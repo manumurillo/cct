@@ -29,8 +29,6 @@ namespace WebSite
                 anio.Items.Add(a.ToString());
             }
             
-
-            Console.Write("Iniciando");
             if (Session["usr_status"] != null)
             {
                 //Response.Redirect("miPerfil.aspx");
@@ -56,55 +54,59 @@ namespace WebSite
                         string usr_email = (string)(email.Text);
                         string usr_pass = encript(contrasena.Text);
 
-
-                        //string f_n = usr_fnac.Substring(0, 4)+"/"+usr_fnac.Substring(5, 2)+"/"+usr_fnac.Substring(8, 2);
-
-                        string insertSQL;
-                        insertSQL = "INSERT INTO registro_usuario (nombre, apellidoPaterno, apellidoMaterno, email, estado, contrasena, fechaNacimiento)";
-                        insertSQL += "VALUES (@nombre, @apellidoPaterno, @apellidoMaterno, @email, @estado, @contrasena, @fechaNacimiento)";
-
-                        SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["CCT2013ConnectionString"].ToString());
-                        SqlCommand cmd = new SqlCommand(insertSQL, conn);
-
-                        cmd.Parameters.AddWithValue("@nombre", usr_nombre);
-                        cmd.Parameters.AddWithValue("@apellidoPaterno", usr_apPaterno);
-                        cmd.Parameters.AddWithValue("@apellidoMaterno", usr_apMaterno);
-                        cmd.Parameters.AddWithValue("@email", usr_email);
-                        cmd.Parameters.AddWithValue("@estado", usr_estado);
-                        cmd.Parameters.AddWithValue("@contrasena", usr_pass);
-                        cmd.Parameters.AddWithValue("@fechaNacimiento", usr_fnac);
-
-                        int added = 0;
-                        try
+                        if (userExist(usr_email))
                         {
-                            conn.Open();
-                            added = cmd.ExecuteNonQuery();
-                            resultado.Text = "Registro Exitoso";
-
-                            string query2 = "SELECT id, nombre FROM registro_usuario WHERE email LIKE '" + usr_email + "'";
-                            SqlCommand cmd2 = new SqlCommand(query2,conn);
-                            SqlDataReader reader = cmd2.ExecuteReader();
-                            if (reader.Read())
-                            {
-                                Session["usr_email"] = usr_email;
-                                Session["usr_id"] = reader["id"];
-                                Session["usr_status"] = "activo";
-                                Session["usr_nombre"] = reader["nombre"];
-                                Response.Redirect("comparteConsejos.aspx");
-                            }
-                            else
-                            {
-                                Response.Redirect("Login.aspx");
-                            }
+                            resultado.Text = "Ya existe una cuenta creada con la dirección de correo: " + usr_email;
                         }
-                        catch (Exception err)
+                        else
                         {
-                            resultado.Text = "Error al registrar sus datos. ";
-                            resultado.Text += err.Message;
-                        }
-                        finally
-                        {
-                            conn.Close();
+                            string insertSQL;
+                            insertSQL = "INSERT INTO registro_usuario (nombre, apellidoPaterno, apellidoMaterno, email, estado, contrasena, fechaNacimiento)";
+                            insertSQL += "VALUES (@nombre, @apellidoPaterno, @apellidoMaterno, @email, @estado, @contrasena, @fechaNacimiento)";
+
+                            SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["CCT2013ConnectionString"].ToString());
+                            SqlCommand cmd = new SqlCommand(insertSQL, conn);
+
+                            cmd.Parameters.AddWithValue("@nombre", usr_nombre);
+                            cmd.Parameters.AddWithValue("@apellidoPaterno", usr_apPaterno);
+                            cmd.Parameters.AddWithValue("@apellidoMaterno", usr_apMaterno);
+                            cmd.Parameters.AddWithValue("@email", usr_email);
+                            cmd.Parameters.AddWithValue("@estado", usr_estado);
+                            cmd.Parameters.AddWithValue("@contrasena", usr_pass);
+                            cmd.Parameters.AddWithValue("@fechaNacimiento", usr_fnac);
+
+                            int added = 0;
+                            try
+                            {
+                                conn.Open();
+                                added = cmd.ExecuteNonQuery();
+                                resultado.Text = "Registro Exitoso";
+
+                                string query2 = "SELECT id, nombre FROM registro_usuario WHERE email LIKE '" + usr_email + "'";
+                                SqlCommand cmd2 = new SqlCommand(query2, conn);
+                                SqlDataReader reader = cmd2.ExecuteReader();
+                                if (reader.Read())
+                                {
+                                    Session["usr_email"] = usr_email;
+                                    Session["usr_id"] = reader["id"];
+                                    Session["usr_status"] = "activo";
+                                    Session["usr_nombre"] = reader["nombre"];
+                                    Response.Redirect("comparteConsejos.aspx");
+                                }
+                                else
+                                {
+                                    Response.Redirect("Login.aspx");
+                                }
+                            }
+                            catch (Exception err)
+                            {
+                                resultado.Text = "Error al registrar sus datos. ";
+                                resultado.Text += err.Message;
+                            }
+                            finally
+                            {
+                                conn.Close();
+                            }
                         }
 
                     }
@@ -143,6 +145,21 @@ namespace WebSite
             {
                 return false;
             }
+        }
+
+        protected bool userExist(string email)
+        {
+            SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["CCT2013ConnectionString"].ToString());
+            string consulta = "SELECT count(*) FROM registro_usuario WHERE email LIKE '" + email + "' ";
+            conn.Open();
+            SqlCommand cmd = new SqlCommand(consulta, conn);
+
+            int res = Convert.ToInt32(cmd.ExecuteScalar());
+            conn.Close();
+            if (res == 1)
+                return true;
+            else
+                return false;
         }
 
     }

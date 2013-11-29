@@ -62,7 +62,7 @@
                     <div class="consejo">
                         <asp:Label ID="resultSearch" runat="server" Text=""></asp:Label>
                         <!--Inicio de listView-->
-                        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:CCT2013ConnectionString %>" SelectCommand="SELECT * FROM dbo.articulo ART LEFT JOIN dbo.registro_usuario USU ON USU.id = ART.id_registro_usuario LEFT JOIN dbo.categoria CAT ON CAT.id = ART.id_categoria WHERE ART.id_registro_usuario != 14 ORDER BY fecha_creacion DESC "></asp:SqlDataSource>
+                        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:CCT2013ConnectionString %>" SelectCommand="SELECT * FROM dbo.articulo ART LEFT JOIN dbo.registro_usuario USU ON USU.id = ART.id_registro_usuario LEFT JOIN dbo.categoria CAT ON CAT.id = ART.id_categoria WHERE ART.tipo = 2 ORDER BY fecha_creacion DESC "></asp:SqlDataSource>
                         <asp:ListView ID="ListView1" runat="server" DataSourceID="SqlDataSource1">
                         
                             <EmptyDataTemplate>
@@ -127,10 +127,12 @@
                 <div class="face">FACEBOOK</div>
             </div>-->
             <div id="raya2"></div>
-            <div id="compartir" class="center">
-                <p class="title">COMPARTE TUS CONSEJOS</p>
-                <p class="subtitle">CON OTRAS MAMÁS</p>
-                <div class="space-10"></div>
+            <div id="compartir">
+                <p class="title center" >COMPARTE TUS CONSEJOS</p>
+                <p class="subtitle center">CON OTRAS MAMÁS</p>
+                <div class="space-5"></div>
+                <div class="mensaje" runat="server" id="Mensaje"></div>
+                <div class="space-5"></div>
         
                 <%
                     if (Session["usr_status"] != null)
@@ -144,10 +146,10 @@
                     <div class="space-5"></div>
            
                     <asp:Label ID="Label1" runat="server" CssClass="label">TÍTULO</asp:Label><br />
-                    <asp:TextBox ID="titulo" CssClass="input-text" runat="server" TabIndex="1"></asp:TextBox>
+                    <asp:TextBox ID="titulo" CssClass="input-text" runat="server" TabIndex="1" ToolTip="Escriba el título de su consejo"></asp:TextBox>
                     <div class="space-5"></div>
                     <asp:Label ID="Label2" runat="server" CssClass="label">CATEGORÍA</asp:Label><br />
-                    <asp:DropDownList ID="categoria" runat="server" TabIndex="2">
+                    <asp:DropDownList ID="categoria" runat="server" TabIndex="2" ToolTip="Seleccione la categoría a la que pertenecerá su consejo">
                         <asp:ListItem Value="1">Habitación</asp:ListItem>
                         <asp:ListItem Value="2">Estancia</asp:ListItem>
                         <asp:ListItem Value="3">Estudio</asp:ListItem>
@@ -158,7 +160,7 @@
                     <div class="space-5"></div>
             
                     <asp:Label ID="Label3" runat="server" CssClass="label">TU CONSEJO</asp:Label><br />
-                    <asp:TextBox ID="consejo" CssClass="input-text" runat="server" TextMode="MultiLine" Height="100px" TabIndex="3"></asp:TextBox>
+                    <asp:TextBox ID="consejo" CssClass="input-text" runat="server" TextMode="MultiLine" Height="100px" TabIndex="3" ToolTip="Redacte aquí el consejo que quiere compartir"></asp:TextBox>
                     <div class="space-10"></div>
                     <asp:Button ID="Button1" runat="server" CssClass="button" Text="COMPARTIR" OnClick="compartir_Click" TabIndex="4" />
             
@@ -172,9 +174,7 @@
                     else{ 
                 %>
                 <div class="gen_form" id="form_buttons">
-                    <div class="space-10"></div>
-                    <p class="subtitle"><b>PARA COMPARTIR TUS CONSEJOS...</b></p>
-
+                    <p class="subtitle center"><b>PARA HACERLO...</b></p>
                     <div class="space-10"></div>
                     <asp:Button ID="login" runat="server" CssClass="button" Text="INICIA SESIÓN" OnClick="login_Click" TabIndex="1" />
 
@@ -188,27 +188,25 @@
     
                         <div class="space-10"></div>
         
-                    <asp:Label ID="labelEmail_l" runat="server" Text="Correo Electrónico" CssClass="label"></asp:Label>
+                    <asp:Label ID="labelEmail_l" runat="server" Text="Correo Electrónico" CssClass="label"></asp:Label><br />
+                    <asp:TextBox ID="email_l" runat="server" CssClass="input-text" MaxLength="60" ToolTip="Escriba su dirección de correo electrónico" CausesValidation="True"></asp:TextBox>
                         <asp:RequiredFieldValidator ID="RequiredEmail_l" runat="server" ErrorMessage="El email es requerido" ValidationGroup="ValidacionLogin" ControlToValidate="email_l" CssClass="errorMsg" Display="Dynamic"></asp:RequiredFieldValidator>
                         <asp:RegularExpressionValidator ID="ValidateEmail_l" runat="server" ErrorMessage="Formato no válido" ValidationGroup="ValidacionLogin" ControlToValidate="email_l" Display="Dynamic" CssClass="errorMsg" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"></asp:RegularExpressionValidator>
-                    <br />
-                    <asp:TextBox ID="email_l" runat="server" CssClass="input-text" MaxLength="60" ToolTip="Escriba su dirección de correo electrónico" CausesValidation="True"></asp:TextBox>
                     <div class="space-5"></div>
 
                     <asp:Label ID="labelContrasena_l" runat="server" CssClass="label" Text="Contraseña"></asp:Label> 
-                        <asp:RequiredFieldValidator ID="RequiredContrasena_l" runat="server" ErrorMessage="Escriba su contraseña" ValidationGroup="ValidacionLogin" ControlToValidate="contrasena_l" Display="Dynamic" CssClass="errorMsg"></asp:RequiredFieldValidator>    <br />
                     <asp:TextBox ID="contrasena_l" runat="server" MaxLength="10" CssClass="input-text" TextMode="Password" CausesValidation="True" ToolTip="Escriba su contraseña"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="RequiredContrasena_l" runat="server" ErrorMessage="Escriba su contraseña" ValidationGroup="ValidacionLogin" ControlToValidate="contrasena_l" Display="Dynamic" CssClass="errorMsg"></asp:RequiredFieldValidator>    <br />
                     <div class="space-5"></div>
 
                     <p class="normal text-right"><a href="recuperarContrasena.aspx" class="mix">Olvidé mi contraseña</a></p>
-                    <div class="space-10"></div>
+                    <div class="space-5"></div>
                     <asp:Button ID="loginSubmit" runat="server" Text="Iniciar sesión" CssClass="button" OnClick="loginSubmit_Click" ViewStateMode="Inherit" ValidationGroup="ValidacionLogin" />
-                    <div class="space-10"></div>
                 </div>
 
                 <div id="form_registro" class="gen_form" style="display:none;">
                     <div class="title">Regístrate</div>
-                    <div class="subtitle">Forma parte de nuestra comunidad para formar un <strong>Hogar Cal-C-Tose</strong></div>
+                    <div class="subtitle">Todos los campos son obligatorios.</div>
                     <div class="space-10"></div>
                         <asp:Label ID="LabelNombre" runat="server" CssClass="label" Text="Nombre"></asp:Label><br />
                         <asp:TextBox ID="nombre" runat="server" CssClass="input-text small" MaxLength="100" ToolTip="Escriba su(s) nombre(s)" TabIndex="1"></asp:TextBox>
@@ -315,7 +313,7 @@
                         <div class="space-5"></div>
 
                         <asp:CheckBox ID="acepto" runat="server" ToolTip="Acepto los Términos y Condiciones" CssClass="checkBox" TabIndex="11" />
-                        <asp:Label ID="LabelTyC" runat="server" CssClass="label" Text="Acepto los Términos y Condiciones y las Políticas de Privacidad" TabIndex="9"></asp:Label>
+                        <asp:Label ID="LabelTyC" runat="server" CssClass="label" Text="Acepto los Términos y Condiciones y las Políticas de Privacidad"></asp:Label>
                         <br /><div class="errorMsg"><asp:Label ID="errorAcepto" runat="server" Text=""></asp:Label></div>
                         <div class="space-5"></div>
 
