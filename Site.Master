@@ -105,7 +105,7 @@
 						<li id="item3"><a href="Calctose.aspx" class="mix <%=sel3 %>">CAL-C-TOSE</a>
 							<ul>
 								<li><a class="mix" href="Calctose.aspx?tema=presentaciones">Presentaciones</a></li>
-								<li><a class="mix" href="Calctose.aspx?tema=ideas-para-el-desayuno">Ideas para el desayuno</a></li>
+								<li><a class="mix" href="Calctose.aspx?tema=ideas-de-menus-nutritivos">Ideas de menús nutritivos</a></li>
 								<li><a class="mix" href="Calctose.aspx?tema=la-ciencia-de-calctose">La ciencia de Cal-C-Tose</a></li>
 								<li><a class="mix" href="Calctose.aspx?tema=acerca-de">Acerca de la marca</a></li>
 							</ul>

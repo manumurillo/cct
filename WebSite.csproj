@@ -70,6 +70,7 @@
     <Content Include="Calctose.aspx" />
     <Content Include="cambiarContrasena.aspx" />
     <Content Include="comparteConsejos.aspx" />
+    <Content Include="habitos.aspx" />
     <Content Include="images\articulos\cepillado_dental.png" />
     <Content Include="images\articulos\como_ahorrar.png" />
     <Content Include="images\articulos\cuidar_agua.png" />
@@ -163,6 +164,7 @@
     <Content Include="styles\images\ui-icons_cd0a0a_256x240.png" />
     <Content Include="scripts\jquery.lightbox_me.js" />
     <Content Include="styles\jquery-ui.css" />
+    <Content Include="styles\layouts.css" />
     <Content Include="styles\lugares.css" />
     <Content Include="styles\mainStyle.css" />
     <Content Include="verArticulo.aspx" />
@@ -208,6 +210,13 @@
     </Compile>
     <Compile Include="comparteConsejos.aspx.designer.cs">
       <DependentUpon>comparteConsejos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="habitos.aspx.cs">
+      <DependentUpon>habitos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="habitos.aspx.designer.cs">
+      <DependentUpon>habitos.aspx</DependentUpon>
     </Compile>
     <Compile Include="Layouts.aspx.cs">
       <DependentUpon>Layouts.aspx</DependentUpon>

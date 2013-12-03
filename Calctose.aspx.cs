@@ -15,9 +15,9 @@ namespace WebSite
             {
                 Page.Header.Title = "Cal-C-Tose :: Presentaciones";
             }
-            else if(Request.QueryString["tema"] == "ideas-para-el-desayuno")
+            else if (Request.QueryString["tema"] == "ideas-de-menus-nutritivos")
             {
-                Page.Header.Title = "Cal-C-Tose :: Ideas para el desayuno";
+                Page.Header.Title = "Cal-C-Tose :: Ideas de menús nutritivos";
             }
             else if (Request.QueryString["tema"] == "la-ciencia-de-calctose")
             {

@@ -27,7 +27,7 @@
             <div id="cal-c-tose">
                 <div>
                     <a href="Calctose.aspx?tema=presentaciones" class="mix">Presentaciones</a> |
-                    <a href="Calctose.aspx?tema=ideas-para-el-desayuno" class="mix">Ideas para el desayuno</a> |
+                    <a href="Calctose.aspx?tema=ideas-de-menus-nutritivos" class="mix">Ideas de menús nutritivos</a> |
                     <a href="Calctose.aspx?tema=la-ciencia-de-calctose" class="mix">La Ciencia de CAL-C-TOSE</a> |
                     <a href="Calctose.aspx?tema=acerca-de" class="mix">Acerca de la Marca</a>
                 </div>
@@ -53,7 +53,8 @@
 
     <%
         }
-        else if (Request.QueryString["tema"] == "ideas-para-el-desayuno") {
+        else if (Request.QueryString["tema"] == "ideas-de-menus-nutritivos")
+        {
     %>
             <div class="top">
                 <div class="columnaIzq">
