@@ -200,6 +200,7 @@
 
 .layout_3 > .title {
     float: left;    
+    width: 500px;
     margin: 20px 15px 20px 20px;
     font-size: 20px;
     font-weight: bold;

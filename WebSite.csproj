@@ -70,7 +70,7 @@
     <Content Include="Calctose.aspx" />
     <Content Include="cambiarContrasena.aspx" />
     <Content Include="comparteConsejos.aspx" />
-    <Content Include="habitos.aspx" />
+    <Content Include="buenosHabitos.aspx" />
     <Content Include="images\articulos\cepillado_dental.png" />
     <Content Include="images\articulos\como_ahorrar.png" />
     <Content Include="images\articulos\cuidar_agua.png" />
@@ -178,7 +178,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </Content>
     <Content Include="Default.aspx" />
-    <Content Include="buenosHabitos.aspx" />
+    <Content Include="buenosHabitos_.aspx" />
     <Content Include="herramientasMama.aspx" />
     <Content Include="Legales.aspx" />
   </ItemGroup>
@@ -211,12 +211,12 @@
     <Compile Include="comparteConsejos.aspx.designer.cs">
       <DependentUpon>comparteConsejos.aspx</DependentUpon>
     </Compile>
-    <Compile Include="habitos.aspx.cs">
-      <DependentUpon>habitos.aspx</DependentUpon>
+    <Compile Include="buenosHabitos.aspx.cs">
+      <DependentUpon>buenosHabitos.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="habitos.aspx.designer.cs">
-      <DependentUpon>habitos.aspx</DependentUpon>
+    <Compile Include="buenosHabitos.aspx.designer.cs">
+      <DependentUpon>buenosHabitos.aspx</DependentUpon>
     </Compile>
     <Compile Include="Layouts.aspx.cs">
       <DependentUpon>Layouts.aspx</DependentUpon>
@@ -275,12 +275,12 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
-    <Compile Include="buenosHabitos.aspx.cs">
-      <DependentUpon>buenosHabitos.aspx</DependentUpon>
+    <Compile Include="buenosHabitos_.aspx.cs">
+      <DependentUpon>buenosHabitos_.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="buenosHabitos.aspx.designer.cs">
-      <DependentUpon>buenosHabitos.aspx</DependentUpon>
+    <Compile Include="buenosHabitos_.aspx.designer.cs">
+      <DependentUpon>buenosHabitos_.aspx</DependentUpon>
     </Compile>
     <Compile Include="herramientasMama.aspx.cs">
       <DependentUpon>herramientasMama.aspx</DependentUpon>

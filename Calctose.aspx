@@ -126,36 +126,37 @@
                         <span>El Hierro, Zinc y &Aacute;cido F&oacute;lico: </span>Apoyan al desarrollo mental.<br />
                         <span>Las Vitaminas A, C, E y Minerales como Zinc y Hierro: </span>ayudan a fortalecer/favorecer el sistema de defensas.
                         <br />
+                        <br />
                         <span>Vitaminas como:</span>
                     </p>
                     <br /><br />
                     <ul>
-                        <li>Vitamina A que ayuda en el mantenimiento de una visi&oacute;n sana</li>
-                        <li>Vitamina B1 y B12 que soportan la funci&oacute;n del sistema nervioso</li>
-                        <li>Vitamina B2 que contribuye en la absorci&oacute;n del hierro</li>
-                        <li>Vitamina B6 que ayuda a las enzimas involucradas en la funci&oacute;n neurotransmisora</li>
-                        <li>Vitamina C importante antioxidante que apoya al sistema de defensas</li>
-                        <li>Vitamina D ayuda al desarrollo de los huesos y dientes</li>
-                        <li>Vitamina E que favorece al sistema inmunitario</li>
-                        <li>Niacina ayuda al crecimiento y desarrollo</li>
+                        <li>Vitamina A que ayuda en el mantenimiento de una visi&oacute;n sana.</li>
+                        <li>Vitamina B1 y B12 que soportan la funci&oacute;n del sistema nervioso.</li>
+                        <li>Vitamina B2 que contribuye en la absorci&oacute;n del hierro.</li>
+                        <li>Vitamina B6 que ayuda a las enzimas involucradas en la funci&oacute;n neurotransmisora.</li>
+                        <li>Vitamina C importante antioxidante que apoya al sistema de defensas.</li>
+                        <li>Vitamina D ayuda al desarrollo de los huesos y dientes.</li>
+                        <li>Vitamina E que favorece al sistema inmunitario.</li>
+                        <li>Niacina ayuda al crecimiento y desarrollo.</li>
                     </ul>
                     <br /><br />
                     <p><span>Minerales como:</span></p>
                     <br /><br />
                     <ul>
-                        <li>Calcio y f&oacute;sforo que ayudan en el desarrollo de huesos y dientes</li>
-                        <li>Hierro y zinc que benefician el desarrollo mental</li>
-                        <li>Potasio que ayuda al transporte de nutrientes</li>
-                        <li>Cobre favorece el sistema inmunitario</li>
-                        <li>Prote&iacute;nas, que favorecen la formaci&oacute;n de los tejidos</li>
-                        <li>Carbohidratos, que son fuente de energ&iacute;a para el cerebro </li>
+                        <li>Calcio y f&oacute;sforo que ayudan en el desarrollo de huesos y dientes.</li>
+                        <li>Hierro y zinc que benefician el desarrollo mental.</li>
+                        <li>Potasio que ayuda al transporte de nutrientes.</li>
+                        <li>Cobre favorece el sistema inmunitario.</li>
+                        <li>Prote&iacute;nas, que favorecen la formaci&oacute;n de los tejidos.</li>
+                        <li>Carbohidratos, que son fuente de energ&iacute;a para el cerebro.</li>
                     </ul>
                     <br /><br />
                     <p>
                         Cal-C-Tose es un alimento en polvo fortificado con sabor a chocolate que le brinda a las mam&aacute;s una herramienta
                         para apoyar la alimentaci&oacute;n y nutrici&oacute;n completa de sus hijos d&iacute;a a d&iacute;a. Contiene 26 
                         nutrimentos importantes que forman parte de los diferentes grupos de alimentos y que apoyen una alimentaci&oacute;n 
-                        correcta
+                        correcta.
                     </p>
                     <br />
                     <p class="pie">
